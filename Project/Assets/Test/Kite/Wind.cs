@@ -21,6 +21,7 @@ using TOOL;
 // 人一般的奔跑速度为5-10m，风速
 // 当风力为2-3级时适合放0.1-0.5平方米的风筝，3-4级为1平方米，5-6级为2平方米以上
 
+// 小风筝不容易飞高的原因是因为，当高度达到一定时，线本身重量会很大，普通一圈线大概为1000m，重量为4m/g
 /// <summary>
 /// Wind.
 /// </summary>
@@ -30,17 +31,22 @@ public class Wind  : U3DSingleton<Wind> {
 		get{ return transform.forward;}
 	}
 
-	public float mSpeed = 1, mOffset = 1; 
+	public float mHeight = 0,mOffset = 0; 
 
 	[SerializeField]
-	AnimationCurve mWindHeightCurve;
+	AnimationCurve mWindHeightCurve, mWindSpeedCurve;
+
+	RaycastHit mHit;
 
 	public Vector3 WindForce(Rigidbody rig){
-		float height = rig.transform.position.y;
-		Vector3 wind = WindDir * mSpeed * mWindHeightCurve.Evaluate(height);
-		Vector3 velocity = rig.velocity;
-		Vector3 force = wind + Vector3.up * (velocity - wind).magnitude * mOffset;
-		rig.AddForce (force);
+		// 不同高度对应不同的风力
+		Physics.Raycast (rig.transform.position,Vector3.down,out mHit);
+		mHeight = mHit.distance;
+		Vector3 wind = WindDir * mWindHeightCurve.Evaluate(mHeight) * 3;	
+		// 不同相对速度对应不同的上升力
+		mOffset = mWindSpeedCurve.Evaluate((rig.velocity - wind).magnitude);
+		Vector3 force = Vector3.up * mOffset;
+		rig.AddForce (wind + force);
 		return force;
 	}
 }
