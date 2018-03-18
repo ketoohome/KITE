@@ -775,8 +775,9 @@
      <Compile Include="Assets\Obi\Scripts\Utils\ObiUtils.cs" />
      <Compile Include="Assets\Test\control.cs" />
      <Compile Include="Assets\Test\Kite\Character\Character.cs" />
-     <Compile Include="Assets\Test\Kite\Kite.cs" />
-     <Compile Include="Assets\Test\Kite\Rope.cs" />
+     <Compile Include="Assets\Test\Kite\Kite\Kite.cs" />
+     <Compile Include="Assets\Test\Kite\Rope\BobbinWinder.cs" />
+     <Compile Include="Assets\Test\Kite\Rope\Rope.cs" />
      <Compile Include="Assets\Test\Kite\Wind.cs" />
      <None Include="Assets\Base\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Base\Demigiant\DOTween\readme.txt" />
