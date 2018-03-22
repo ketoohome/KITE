@@ -849,6 +849,7 @@
      <None Include="Assets\Base\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\Base\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
      <None Include="Assets\Base\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\Test\Kite\Character\Cartoon.shader" />
      <None Include="Assets\Base\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\Base\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\Base\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />

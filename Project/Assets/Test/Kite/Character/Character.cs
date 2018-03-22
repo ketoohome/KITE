@@ -38,7 +38,8 @@ public class Character : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButtonDown (0)) {
-			PickUpKite ();
+			if (mRope != null) PickUpKite ();
+			else PickUpRope ();
 		}
 
 		if (Input.GetMouseButtonDown (1)) {
@@ -68,12 +69,28 @@ public class Character : MonoBehaviour {
 	/// 拾取风筝
 	/// </summary>
 	void PickUpKite(){
-		if (mRope == null) return;
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 		if (Physics.Raycast (ray, out hit, 3)) {
-			Kite kite = hit.collider.transform.GetComponent<Kite> ();
-			if (kite != null) mRope.ConnectKite (hit.collider.gameObject);
+			if (hit.collider.transform.GetComponent<Kite> () != null) {
+				mRope.ConnectKite (hit.collider.gameObject);
+				return;
+			}
+		}
+	}
+
+	void PickUpRope(){
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		RaycastHit hit;
+		if (Physics.Raycast (ray, out hit, 3)) {
+			Transform rope = hit.collider.transform.parent;
+			if(rope != null){
+				mRope = rope.GetComponent<Rope> ();
+				if (mRope != null) {
+					mRope.SolutionRope (transform.position,gameObject);
+					return;
+				}
+			}
 		}
 	}
 
@@ -85,7 +102,7 @@ public class Character : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 		if (Physics.Raycast (ray, out hit, 3)) {
-			mRope.DisconnectKite (hit.point,hit.collider.gameObject);
+			mRope.TipeRope (hit.point,hit.collider.gameObject);
 			mRope = null;
 		}
 	}

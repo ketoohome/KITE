@@ -40,13 +40,14 @@ public class Wind  : U3DSingleton<Wind> {
 
 	public Vector3 WindForce(Rigidbody rig){
 		// 不同高度对应不同的风力
-		Physics.Raycast (rig.transform.position,Vector3.down,out mHit);
-		mHeight = mHit.distance;
+		//Physics.Raycast (rig.transform.position,Vector3.down,out mHit);
+		//mHeight = mHit.distance;
+		mHeight = rig.transform.position.y;
 		Vector3 wind = WindDir * mWindHeightCurve.Evaluate(mHeight) * 3;	
 		// 不同相对速度对应不同的上升力
 		mOffset = mWindSpeedCurve.Evaluate((rig.velocity - wind).magnitude);
 		Vector3 force = Vector3.up * mOffset;
-		rig.AddForce (wind + force);
+		rig.AddForce ((wind + force)*Time.deltaTime * 50);
 		return force;
 	}
 }

@@ -66,9 +66,21 @@ public class Rope : MonoBehaviour {
 	/// 断开风筝的链接，并绑定在一个物体上
 	/// </summary>
 	/// <param name="fix">Fix.</param>
-	public void DisconnectKite(Vector3 point, GameObject fix = null){
+	public void TipeRope(Vector3 point, GameObject fix = null){
 		transform.parent = fix.transform;
 		//transform.localPosition = new Vector3(1.7f,0.02f,0);
 		transform.position = point;
+		transform.Find ("StartNode").gameObject.SetActive(true);
+	}
+
+	/// <summary>
+	/// 解绳子
+	/// </summary>
+	/// <param name="point">Point.</param>
+	/// <param name="character">Character.</param>
+	public void SolutionRope(Vector3 point,GameObject character){
+		transform.parent = character.transform;
+		transform.position = point;
+		transform.Find ("StartNode").gameObject.SetActive(false);
 	}
 }
