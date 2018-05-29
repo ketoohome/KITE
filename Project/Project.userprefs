@@ -1,15 +1,53 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Test\Kite\Character\Character.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Character\Character.cs">
     <Files>
-      <File FileName="Assets\Test\Kite\Character\Character.cs" Line="97" Column="29" />
-      <File FileName="Assets\Test\Kite\Rope\Rope.cs" Line="39" Column="1" />
+      <File FileName="Assets\Resources\Character\Character.cs" Line="94" Column="1" />
+      <File FileName="Assets\Base\Obi\Scripts\Actors\ObiRope.cs" Line="278" Column="1" />
+      <File FileName="Assets\Resources\Rope\Rope.cs" Line="104" Column="63" NotebookId="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Project" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Base" expanded="True">
+                <Node name="Obi" expanded="True">
+                  <Node name="Sample Scenes" expanded="True">
+                    <Node name="SampleResources" expanded="True">
+                      <Node name="Scripts" expanded="True" />
+                    </Node>
+                  </Node>
+                  <Node name="Scripts" expanded="True">
+                    <Node name="Actors" expanded="True" />
+                    <Node name="Constraints" expanded="True">
+                      <Node name="ConstraintBatches" expanded="True" />
+                    </Node>
+                    <Node name="Utils" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="Character" expanded="True">
+                  <Node name="Character.cs" selected="True" />
+                </Node>
+                <Node name="Rope" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="Project" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="F:\GitHub\Kite\Project\Assets\Base\Obi\Scripts\Actors\ObiRope.cs" line="278" column="59" />
-      <Breakpoint file="F:\GitHub\Kite\Project\Assets\Base\Obi\Scripts\Constraints\ConstraintBatches\ObiDistanceConstraintBatch.cs" line="162" column="1" />
+      <Breakpoint file="F:\GitHub\Kite\Project\Assets\Resources\Character\Character.cs" line="90" column="1" />
+      <Breakpoint file="F:\GitHub\Kite\Project\Assets\Resources\Character\Character.cs" line="84" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
